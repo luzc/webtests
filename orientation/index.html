@@ -5,17 +5,20 @@
     <div id='beta'></div>
     <div id='gamma'></div>
     <script>
-      if(window.ondeviceorientation){
-        var do = document.querySelector('deviceorientation');
-        do.innerHTML('yes');
-        var alpha = document.querySelector('alpha');
-        var beta = document.querySelector('beta');
-        var gamma = document.querySelector('gamma');
+      var deviceO = document.querySelector('#deviceorientation');
+
+      if('ondeviceorientation' in window){
+        deviceO.innerHTML = 'yes';
+        var alpha = document.querySelector('#alpha');
+        var beta = document.querySelector('#beta');
+        var gamma = document.querySelector('#gamma');
         window.addEventListener('deviceorientation', function(e){
           alpha.innerHTML = 'alpha = ' + e.alpha;
           beta.innerHTML = 'beta = ' + e.beta;
           gamma.innerHTML ='gamma = ' + e.gamma;
         });
+      } else {
+        deviceO.innerHTML = 'no';
       }
     </script>
   </body>
