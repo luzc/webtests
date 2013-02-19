@@ -12,12 +12,12 @@
     window.addEventListener('devicemotion', function(e){
       if(e.acceleration){
         var acc = document.getElementById('acceleration');
-        acc.innerHTML = 'acceleration = ' + e.acceleration.x + ', ' + e.acceleration.y + ', ' + acceleration.z;
+        acc.innerHTML = 'acceleration = ' + e.acceleration.x + ', ' + e.acceleration.y + ', ' + e.acceleration.z;
       }
-      //if(e.accelerationIncludingGravity){
-        //var accG = document.getElementById('accelerationG');
-        //accG.innerHTML = 'acceleration including G = ' + e.accelerationIncludingGravity + ', ' + e.accelerationIncludingGravity + ', ' + accelerationIncludingGravity;
-      //}
+      if(e.accelerationIncludingGravity){
+        var accG = document.getElementById('accelerationG');
+        accG.innerHTML = 'acceleration including G = ' + e.accelerationIncludingGravity + ', ' + e.accelerationIncludingGravity + ', ' + e. accelerationIncludingGravity;
+      }
       if(e.rotationRate){
         var angV = document.getElementById('angularV');
         angV.innerHTML = 'rotation rate = ' + e.rotationRate.alpha + ', ' + e.rotationRate.beta + ', ' + e.rotationRate.gamma;
