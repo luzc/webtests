@@ -1,0 +1,20 @@
+<html>
+  <body>
+    <span id='acceleration'></span>
+    <span id='accelerationG'></span>
+    <span id='angularV'></span>
+    <span id='interval'></span>
+    <script>
+    window.addEventListener('devicemotion', function(e){
+      acc = document.getElementById('acceleration');
+      acc.innerHTML = 'acceleration = ' + e.acceleration.x + ', ' + e.acceleration.y + ', ' + acceleration.z;
+      accG = document.getElementById('accelerationG');
+      accG.innerHTML = 'acceleration including G = ' + e.accelerationIncludingGravity.x + ', ' + e.accelerationIncludingGravity.y + ', ' + accelerationIncludingGravity.z;
+      angV = document.getElementById('angularV');
+      angV.innerHTML = 'rotation rate = ' + e.rotationRate.alpha + ', ' + e.rotationRate.beta + ', ' + e.rotationRate.gamma;
+      interv = document.getElementById('interval');
+      interv.innerHTML = e.interval;
+    });
+    </script>
+  </body>
+</html>
