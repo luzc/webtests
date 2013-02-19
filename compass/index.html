@@ -5,6 +5,12 @@
 <script>
   var cnc = document.querySelector('.yesno');
   cnc.textContent = 'oncompassneedscalibration' in window ? 'yes' : 'no';
+  if ('oncompassneedscalibration' in window) {
+    window.addEventListener('compassneedscalibration', function(e){
+      e.preventDefault();
+      alert('has preventDefault');
+    });
+  }
 </script>
 </body>
 </html>
