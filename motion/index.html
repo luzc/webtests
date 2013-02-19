@@ -1,12 +1,16 @@
 <html>
   <body>
-    <span id='acceleration'></span>
-    <span id='accelerationG'></span>
-    <span id='angularV'></span>
-    <span id='interval'></span>
+    Supports devicemotion <span id='devicemotionsupport'></span>
+    <div id='acceleration'></div>
+    <div id='accelerationG'></div>
+    <div id='angularV'></div>
+    <div id='interval'></div>
     <script>
+    var dm = document.querySelector('#devicemotionsupport');
+    dm.textContent = 'ondevicemotion' in window ? 'Yes' : 'No';
+
     window.addEventListener('devicemotion', function(e){
-      acc = document.getElementById('acceleration');
+      var acc = document.getElementById('acceleration');
       acc.innerHTML = 'acceleration = ' + e.acceleration.x + ', ' + e.acceleration.y + ', ' + acceleration.z;
       accG = document.getElementById('accelerationG');
       accG.innerHTML = 'acceleration including G = ' + e.accelerationIncludingGravity.x + ', ' + e.accelerationIncludingGravity.y + ', ' + accelerationIncludingGravity.z;
