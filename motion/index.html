@@ -10,14 +10,22 @@
     dm.textContent = 'ondevicemotion' in window ? 'Yes' : 'No';
 
     window.addEventListener('devicemotion', function(e){
-      var acc = document.getElementById('acceleration');
-      acc.innerHTML = 'acceleration = ' + e.acceleration.x + ', ' + e.acceleration.y + ', ' + acceleration.z;
-      //var accG = document.getElementById('accelerationG');
-      //accG.innerHTML = 'acceleration including G = ' + e.accelerationIncludingGravity + ', ' + e.accelerationIncludingGravity + ', ' + accelerationIncludingGravity;
-      var angV = document.getElementById('angularV');
-      angV.innerHTML = 'rotation rate = ' + e.rotationRate.alpha + ', ' + e.rotationRate.beta + ', ' + e.rotationRate.gamma;
-      var interv = document.getElementById('interval');
-      interv.innerHTML = e.interval;
+      if(e.acceleration){
+        var acc = document.getElementById('acceleration');
+        acc.innerHTML = 'acceleration = ' + e.acceleration.x + ', ' + e.acceleration.y + ', ' + acceleration.z;
+      }
+      if(e.accelerationIncludingGravity){
+        var accG = document.getElementById('accelerationG');
+        accG.innerHTML = 'acceleration including G = ' + e.accelerationIncludingGravity + ', ' + e.accelerationIncludingGravity + ', ' + accelerationIncludingGravity;
+      }
+      if(e.rotationRate){
+        var angV = document.getElementById('angularV');
+        angV.innerHTML = 'rotation rate = ' + e.rotationRate.alpha + ', ' + e.rotationRate.beta + ', ' + e.rotationRate.gamma;
+      }
+      if(e.interval){
+        var interv = document.getElementById('interval');
+        interv.innerHTML = e.interval;
+      }
     });
     </script>
   </body>
