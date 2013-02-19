@@ -12,11 +12,11 @@
     window.addEventListener('devicemotion', function(e){
       var acc = document.getElementById('acceleration');
       acc.innerHTML = 'acceleration = ' + e.acceleration.x + ', ' + e.acceleration.y + ', ' + acceleration.z;
-      accG = document.getElementById('accelerationG');
+      var accG = document.getElementById('accelerationG');
       accG.innerHTML = 'acceleration including G = ' + e.accelerationIncludingGravity.x + ', ' + e.accelerationIncludingGravity.y + ', ' + accelerationIncludingGravity.z;
-      angV = document.getElementById('angularV');
+      var angV = document.getElementById('angularV');
       angV.innerHTML = 'rotation rate = ' + e.rotationRate.alpha + ', ' + e.rotationRate.beta + ', ' + e.rotationRate.gamma;
-      interv = document.getElementById('interval');
+      var interv = document.getElementById('interval');
       interv.innerHTML = e.interval;
     });
     </script>
